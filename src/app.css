@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+html {
+    /* gives the website smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+ *{  /*selets everything in the entire page */
+    /* sets the default font to Roboto */
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,  /* applies font to h1,h2, h3 and creates .poppins class to add this to any tag */
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
