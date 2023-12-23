@@ -3,6 +3,12 @@
 
 <head>
 	<meta charset="utf-8" />
+	<!-- particle-js library from https://cdnjs.com/libraries/particles.js -->
+	<!-- well, for god know why this cdn is not working , so I copied the link from github
+	https://github.com/jamezmca/hughjass/blob/main/src/app.html -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
+		integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- font awesome cdn from https://cdnjs.com/libraries/font-awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- tag for google fonts which needs to be added after meta tag -->
@@ -19,6 +25,15 @@
 <body data-sveltekit-preload-data="hover" class="bg-slate-950 text-white relative">
 					<!-- [] for custom value in tailwind css -->
 	<div style="display: contents" class="relative z-[1]">%sveltekit.body%</div>
+	<div class="absolute min-h-screen top-0 left-0 w-full z-[-1] opacity-70">
+		<div id="particles-js" class="absolute inset-0"></div>
+	</div>
+	<script>
+		// particle js config. particles.json file is in the assets folder
+		particlesJS.load('particles-js', 'assets/particles.json', function () {
+			console.log('callback - particles.js config loaded');
+		});
+	</script>
 </body>
 
 </html>
